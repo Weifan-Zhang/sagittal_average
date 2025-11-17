@@ -29,6 +29,6 @@ def run_averages(file_input: PathLike = "brain_sample.csv",
     """
 
     planes = np.loadtxt(file_input, dtype=int, delimiter=",")
-    averages = planes.mean(axis=0)[np.newaxis, :]
+    averages = planes.mean(axis=1)[:, np.newaxis]
     np.savetxt(file_output, averages, fmt="%.1f", delimiter=",")
 
