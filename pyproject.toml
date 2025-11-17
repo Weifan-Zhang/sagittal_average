@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sagittal-average"
+version = "0.1.0"
+description = "Calculate sagittal plane averages from CSV brain scan output."
+authors = [{ name = "Charlene" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23",
+]
+
+[project.scripts]
+sagittal-average = "sagittal_average.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
