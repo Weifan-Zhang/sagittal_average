@@ -18,7 +18,7 @@ def test_run_averages_computes_row_means(tmp_path):
 
     run_averages(file_input, file_output)
 
-    result = np.loadtxt(file_output, delimiter=",")
+    result = np.loadtxt(file_output, delimiter=",", ndmin=2)
     expected = planes.mean(axis=1)[:, np.newaxis]
     np.testing.assert_allclose(result, expected)
 
